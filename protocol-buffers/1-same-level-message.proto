@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message Person {
+  int32 age = 1;
+  string first_name = 2;
+  string last_name = 3;
+  bytes small_picture = 4;
+  bool is_profile_verified = 5;
+  float height = 6;
+  Date birthday = 7;
+}
+
+message Date {
+  int32 year = 1;
+  int32 month = 2;
+  int32 day = 3;
+}
