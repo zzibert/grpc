@@ -8,6 +8,16 @@ message Person {
   bool is_profile_verified = 5;
   float height = 6;
   Date birthday = 7;
+
+  message Address {
+    string address_line_1 = 1;
+    string address_line_2 = 2;
+    string zip_code = 3;
+    string city = 4;
+    string country = 5;
+  }
+
+  repeated Address addresses = 8;
 }
 
 message Date {
