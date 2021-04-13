@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "part2/3-data.proto";
+
+package my.date;
+
+message Person {
+  int32 age = 1;
+  string first_name = 2;
+  string last_name = 3;
+  bytes small_picture = 4;
+  bool is_profile_verified = 5;
+  float height = 6;
+  my.date.Date birthday = 7;
+
+  message Address {
+    string address_line_1 = 1;
+    string address_line_2 = 2;
+    string zip_code = 3;
+    string city = 4;
+    string country = 5;
+  }
+
+  repeated Address addresses = 8;
+}
