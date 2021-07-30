@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/cloudServicesConfig" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/controller" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/controller-platform-configs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/orchestrator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plume-akka" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pod_inventory" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/redirector" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/release-tools" vcs="Git" />
+  </component>
+</project>
