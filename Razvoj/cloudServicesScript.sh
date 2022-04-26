@@ -1,30 +1,30 @@
 #!/bin/bash
-VERSION="1.79"
-COMMIT="SPLAT-1432: Add mqtt-log config"
+VERSION="1.92"
+COMMIT="SPLAT-2790: Factory-Reset Mitigation"
 get_branches() {
-    echo "beta-$VERSION"
-    echo "chi-$VERSION"
-    echo "chi-staging-$VERSION"
-    echo "delta-$VERSION"
-    echo "dog1-$VERSION"
-    echo "etna-$VERSION"
-    echo "etna2"
-    echo "func3"
+    # echo "beta-$VERSION"
+    # echo "chi-$VERSION"
+    # echo "chi-staging-$VERSION"
+    # echo "delta-$VERSION"
+    # echo "dog1-$VERSION"
+    # echo "etna-$VERSION"
+    # echo "etna2"
+    # echo "func3"
     echo "func4-$VERSION"
-    echo "gamma-$VERSION"
-    echo "iota-$VERSION"
-    echo "kappa-$VERSION"
-    echo "opensync"
-    echo "osacademy"
-    echo "osync"
-    echo "padev1"
-    echo "padev2"
-    echo "pml"
-    echo "slodev1"
-    echo "tau-$VERSION"
-    echo "theta-$VERSION"
-    echo "thetadev-$VERSION"
-    echo "tomasz"
+    # echo "gamma-$VERSION"
+    # echo "iota-$VERSION"
+    # echo "kappa-$VERSION"
+    # echo "opensync"
+    # echo "osacademy"
+    # echo "osync"
+    # echo "padev1"
+    # echo "padev2"
+    # echo "pml"
+    # echo "slodev1"
+    # echo "tau-$VERSION"
+    # echo "theta-$VERSION"
+    # echo "thetadev-$VERSION"
+    # echo "tomasz"
 }
 function create() {
     mkdir -p "$1"
@@ -37,7 +37,7 @@ function transform() {
     done
 }
 function apply() {
-    create feature-flags/controller/mqtt-log '[{"id": "default","enabled": false,"reportInterval": 60}]'
+    transform feature-flags/controller/factory-reset 'map({"syncHomeVapsIfFrcMatch": ., "maxFactoryResets": 5, "interval": "1 h"})'
 }
 git fetch
 for branch in $(get_branches); do
@@ -54,3 +54,4 @@ for branch in $(get_branches); do
     git commit -m "$COMMIT"
     git push
 done
+
